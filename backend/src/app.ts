@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express';
+import prisma from "./config/prisma.js";
 
 const app = express();
 
