@@ -1,12 +1,10 @@
-import express, { Request, Response } from 'express';
-import prisma from "./config/prisma.js";
+import express from "express";
+import authRoutes from "./routes/auth.routes.js";
 
 const app = express();
 
-app.get('/', (req: Request, res: Response) => {
-  res.json({
-    message: 'Secure Vault API',
-  });
-});
+app.use(express.json());
+
+app.use("/api/auth", authRoutes);
 
 export default app;
